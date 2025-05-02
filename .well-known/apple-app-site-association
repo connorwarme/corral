@@ -1,13 +1,27 @@
 {
   "applinks": {
-    "apps": [],
     "details": [
       {
-        "appID": "S6XUQKVK89.com.decodesolutions.corral",
-        "paths": [
-          "*"
+        "appIDs": [
+          "S6XUQKVK89.com.decodesolutions.corral"
+        ],
+        "components": [
+          {
+            "/": "*",
+            "comment": "Matches all routes"
+          }
         ]
       }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": [
+      "S6XUQKVK89.com.decodesolutions.corral"
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "S6XUQKVK89.com.decodesolutions.corral"
     ]
   }
 }
