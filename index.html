@@ -44,7 +44,9 @@
       <h1>Welcome to Corral!</h1>
       <p>If you have our app installed, try this link to open it directly.</p>
       <p>
-        <a href="corral://login">Open Corral (if installed)</a>
+        <a class="mobile-link" href="corral://login"
+          >Open Corral (if installed)</a
+        >
       </p>
       <p>
         Otherwise, you can
@@ -52,4 +54,20 @@
       </p>
     </div>
   </body>
+  <script>
+    // function to check if the user is on a mobile or tablet device
+    function isMobileOrTablet() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      return /android|iphone|ipad|ipod/i.test(userAgent);
+    }
+    // get the reset_password_token from the URL
+    const params = new URLSearchParams(window.location.search);
+    const resetPasswordToken = params.get("reset_password_token");
+
+    // update the app link with the token if it exists & the user is on a mobile or tablet device
+    if (resetPasswordToken && isMobileOrTablet()) {
+      const appLink = `corral://confirm-reset?reset_password_token=${resetPasswordToken}`;
+      window.location.href = appLink;
+    }
+  </script>
 </html>
