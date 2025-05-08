@@ -62,12 +62,13 @@
     }
     // get the reset_password_token from the URL
     const params = new URLSearchParams(window.location.search);
-    const resetPasswordToken = params.get("reset_password_token");
+    // const resetPasswordToken = params.get("reset_password_token");
+    const resetPasswordToken = params.get("test");
 
     // update the app link with the token if it exists & the user is on a mobile or tablet device
     if (resetPasswordToken && isMobileOrTablet()) {
       const appLink = `corral://confirm-reset?reset_password_token=${resetPasswordToken}`;
-      window.location.href = appLink;
+      window.location.href = "corral://forgot-password";
     }
   </script>
 </html>
